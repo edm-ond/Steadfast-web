@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steadfast - Men's Mental Fitness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <i class="fas fa-shield-alt"></i> Steadfast
+        </a>
+        
+        <!-- User Menu -->
+        <div class="navbar-nav ms-auto">
+            <div id="loginBtn">
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="fas fa-user"></i> Login
+                </button>
+            </div>
+            
+            <div id="userMenu" style="display: none;">
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle"></i> 
+                        <span id="userName">User</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="showPreferences()">
+                            <i class="fas fa-cog"></i> Preferences
+                        </a></li>
+                        <li><a class="dropdown-item" href="#" onclick="exportData()">
+                            <i class="fas fa-download"></i> Export Data
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#" onclick="auth.logout()">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Welcome Section -->
+        <div class="welcome-card card mb-4">
+            <div class="card-body text-center">
+                <h2>Welcome back, Edmond</h2>
+                <p class="text-muted">How are you feeling today?</p>
+                <div class="mood-selector">
+                    <button class="btn btn-outline-primary mood-btn" data-mood="1">😔</button>
+                    <button class="btn btn-outline-primary mood-btn" data-mood="2">😕</button>
+                    <button class="btn btn-outline-primary mood-btn" data-mood="3">😐</button>
+                    <button class="btn btn-outline-primary mood-btn" data-mood="4">🙂</button>
+                    <button class="btn btn-outline-primary mood-btn" data-mood="5">😊</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card quick-action-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-dumbbell fa-2x mb-3"></i>
+                        <h5>5-Min Drill</h5>
+                        <p>Quick stress relief</p>
+                        <button class="btn btn-primary w-100" onclick="startDrill()">Start Breathing Exercise</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card quick-action-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-book fa-2x mb-3"></i>
+                        <h5>Quick Journal</h5>
+                        <p>Capture your thoughts</p>
+                        <button class="btn btn-outline-primary w-100" onclick="openJournal()">New Entry</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Recent Activity</h5>
+            </div>
+            <div class="card-body">
+                <div class="activity-item">
+                    <i class="fas fa-check-circle text-success"></i>
+                    Completed "Stress Management" drill
+                    <small class="text-muted d-block">2 hours ago</small>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-users text-info"></i>
+                    New message in Fatherhood group
+                    <small class="text-muted d-block">Yesterday</small>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-chart-line text-warning"></i>
+                    5-day streak! Keep going
+                    <small class="text-muted d-block">2 days ago</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Stats -->
+<!-- Progress Analytics Section -->
+<section class="progress-analytics mb-5">
+    <div class="row">
+        <!-- Mood Trends Chart -->
+        <div class="col-lg-8 mb-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Mood Trends</h5>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-outline-secondary active" onclick="changeChartRange('week')">Week</button>
+                        <button class="btn btn-outline-secondary" onclick="changeChartRange('month')">Month</button>
+                        <button class="btn btn-outline-secondary" onclick="changeChartRange('all')">All Time</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <canvas id="moodChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- Additional Charts Row -->
+    <div class="row">
+        <!-- Quick Stats Cards -->
+        <div class="col-md-3 col-6 mb-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <div class="text-primary mb-2">
+                        <i class="fas fa-brain fa-2x"></i>
+                    </div>
+                    <h4 id="totalDrills">0</h4>
+                    <small>Drills Completed</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <div class="text-success mb-2">
+                        <i class="fas fa-book fa-2x"></i>
+                    </div>
+                    <h4 id="totalJournal">0</h4>
+                    <small>Journal Entries</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <div class="text-info mb-2">
+                        <i class="fas fa-calendar-check fa-2x"></i>
+                    </div>
+                    <h4 id="totalSessions">0</h4>
+                    <small>Therapy Sessions</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <div class="text-warning mb-2">
+                        <i class="fas fa-fire fa-2x"></i>
+                    </div>
+                    <h4 id="currentStreak">0</h4>
+                    <small>Day Streak</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="navbar navbar-dark bg-dark fixed-bottom d-lg-none">
+        <div class="container-fluid">
+            <div class="row w-100">
+                <div class="col-3 text-center">
+                    <a href="index.html" class="text-white"><i class="fas fa-home"></i></a>
+                </div>
+                <div class="col-3 text-center">
+                    <a href="toolkit.html" class="text-white"><i class="fas fa-tools"></i></a>
+                </div>
+                <div class="col-3 text-center">
+                    <a href="garage.html" class="text-white"><i class="fas fa-car"></i></a>
+                </div>
+                <div class="col-3 text-center">
+                    <a href="crew.html" class="text-white"><i class="fas fa-users"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Add this to head section of all pages -->
+    <script src="charts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script src="achievements.js"></script>
+    <!-- Auth Modal -->
+<div class="modal fade" id="authModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ul class="nav nav-tabs w-100" id="authTabs">
+                    <li class="nav-item w-50">
+                        <button class="nav-link active w-100" onclick="showAuthTab('login')">
+                            Login
+                        </button>
+                    </li>
+                    <li class="nav-item w-50">
+                        <button class="nav-link w-100" onclick="showAuthTab('signup')">
+                            Sign Up
+                        </button>
+                    </li>
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Login Form -->
+                <div id="loginForm">
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Your password">
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="handleLogin()">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </div>
+                <!-- Add to index.html - for testing reminders -->
+<div class="test-reminder" style="display: none;" id="testReminders">
+    <h6>Test Reminders</h6>
+    <p class="small text-muted">Test how reminders will look (admin only)</p>
+    <div class="btn-group">
+        <button class="btn btn-sm btn-outline-info" onclick="auth.showMoodReminder()">
+            Test Mood Reminder
+        </button>
+        <button class="btn btn-sm btn-outline-success" onclick="auth.showDrillReminder()">
+            Test Drill Reminder
+        </button>
+    </div>
+</div>
+
+    <!-- Update preferences modal body -->
+<div class="modal-body">
+    <div class="mb-3">
+        <label class="form-label">Theme</label>
+        <select class="form-select" id="prefTheme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="auto">Auto (System)</option>
+        </select>
+    </div>
+    
+    <div class="card mb-3">
+        <div class="card-header">
+            <h6 class="mb-0">Daily Reminders</h6>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="prefReminders" checked>
+                    <label class="form-check-label" for="prefReminders">
+                        Enable daily reminders
+                    </label>
+                </div>
+            </div>
+            
+            <div id="reminderTimes" style="display: none;">
+                <div class="row">
+                    <div class="col-md-6 mb-2">
+                        <label class="form-label small">Mood Check Time</label>
+                        <select class="form-select form-select-sm" id="prefMoodTime">
+                            <option value="9">9:00 AM</option>
+                            <option value="10">10:00 AM</option>
+                            <option value="11">11:00 AM</option>
+                            <option value="12">12:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label class="form-label small">Drill Reminder Time</label>
+                        <select class="form-select form-select-sm" id="prefDrillTime">
+                            <option value="15">3:00 PM</option>
+                            <option value="16">4:00 PM</option>
+                            <option value="17">5:00 PM</option>
+                            <option value="18">6:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="prefNotifications">
+        <label class="form-check-label" for="prefNotifications">
+            Enable browser notifications
+        </label>
+    </div>
+</div>
+                <!-- Signup Form -->
+                <div id="signupForm" style="display: none;">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="signupName" placeholder="Your name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="signupEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" placeholder="Create a password">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="signupConfirm" placeholder="Confirm password">
+                    </div>
+                    <button class="btn btn-success w-100" onclick="handleSignup()">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+   <!-- Achievements Section -->
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">
+            <i class="fas fa-trophy"></i> Achievements
+        </h5>
+        <a href="achievements.html" class="btn btn-sm btn-outline-primary">
+            View All
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="row text-center" id="dashboardAchievements">
+            <!-- Recent achievements will be loaded here -->
+        </div>
+        <div class="text-center mt-3">
+            <small class="text-muted" id="achievementsProgress">0/8 achievements unlocked</small>
+        </div>
+    </div>
+</div>
+</body>
+</html>

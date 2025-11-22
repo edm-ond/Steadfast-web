@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steadfast - Mental Fitness for Men</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Simple Hero Section -->
+    <div class="container-fluid bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">
+                <i class="fas fa-shield-alt"></i> Steadfast
+            </h1>
+            <p class="lead mb-4">Mental Fitness for Modern Men</p>
+            <p>Strength isn't about suffering in silence. It's about building resilience.</p>
+            <button class="btn btn-light btn-lg mt-3" onclick="enterApp()">
+                <i class="fas fa-rocket"></i> Enter App
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <h3 class="text-primary">40%</h3>
+                <p>of men never talk about mental health</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="text-primary">3x</h3>
+                <p>higher suicide rate in men</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="text-primary">77%</h3>
+                <p>feel pressure to be "emotionally strong"</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="text-primary">2x</h3>
+                <p>more likely to develop substance issues</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-tools fa-2x text-primary mb-3"></i>
+                        <h5>Mental Fitness Toolkit</h5>
+                        <p>Practical exercises and drills</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-car fa-2x text-success mb-3"></i>
+                        <h5>Professional Help</h5>
+                        <p>Connect with therapists</p>
+          
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-users fa-2x text-info mb-3"></i>
+                        <h5>Brotherhood</h5>
+                        <p>Community support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crisis Help -->
+    <div class="container-fluid bg-warning py-4">
+        <div class="container text-center">
+            <h5><i class="fas fa-life-ring"></i> In Crisis?</h5>
+            <p class="mb-2">National Suicide Prevention Lifeline: <strong>254-73345-6789</strong></p>
+            <p class="mb-0">Crisis Text Line: <strong>Text HOME to 741741</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function enterApp() {
+            // Check if user is logged in
+            const isLoggedIn = localStorage.getItem('currentUser');
+            if (isLoggedIn) {
+                window.location.href = 'dashboard.html';
+            } else {
+                window.location.href = 'dashboard.html'; // Will show login there
+            }
+        }
+    </script>
+</body>
+</html>
