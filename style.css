@@ -1,0 +1,1003 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-bg: #ecf0f1;
+    --text-color: #2c3e50;
+    --bg-color: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --navbar-bg: #343a40;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+[data-theme="dark"] {
+    --primary-color: #3498db;
+    --secondary-color: #1abc9c;
+    --accent-color: #e74c3c;
+    --light-bg: #2c3e50;
+    --text-color: #ecf0f1;
+    --bg-color: #1a1a1a;
+    --card-bg: #2d3748;
+    --border-color: #4a5568;
+    --navbar-bg: #1a202c;
+    --success-color: #48bb78;
+    --warning-color: #ecc94b;
+    --danger-color: #f56565;
+}
+
+/* Apply theme variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 60px; /* Space for bottom nav */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Card styles using theme variables */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Navbar */
+.navbar-dark {
+    background-color: var(--navbar-bg) !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Form controls */
+.form-control, .form-select {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--card-bg);
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Modal */
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.modal-header, .modal-footer {
+    border-color: var(--border-color);
+}
+
+/* Progress bars */
+.progress {
+    background-color: var(--light-bg);
+}
+
+/* Badges */
+.badge.bg-light {
+    background-color: var(--light-bg) !important;
+    color: var(--text-color) !important;
+}
+
+/* Text colors */
+.text-muted {
+    color: #6c757d !important; /* Keep this consistent in both themes */
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .alert-light {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .table {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .table-hover tbody tr:hover {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-bg: #ecf0f1;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 60px; /* Space for bottom nav */
+}
+
+/* Custom Card Styles */
+.welcome-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.quick-action-card {
+    transition: transform 0.2s;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.quick-action-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Mood Selector */
+.mood-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.mood-btn {
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.mood-btn.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Activity Items */
+.activity-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+/* Bottom Navigation */
+.fixed-bottom {
+    padding: 10px 0;
+}
+
+.fixed-bottom a {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Custom Colors */
+.text-primary { color: var(--secondary-color) !important; }
+.bg-primary { background-color: var(--secondary-color) !important; }
+.btn-primary { 
+    background-color: var(--secondary-color); 
+    border-color: var(--secondary-color);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .mood-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+/* Toolkit Specific Styles */
+.tool-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tool-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.tool-card .tags {
+    margin-bottom: 10px;
+}
+
+.tool-card .tags .badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* Category Filter */
+.category-filter .btn-group .btn {
+    border-radius: 0;
+}
+
+.category-filter .btn:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.category-filter .btn:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Search Box */
+.search-box {
+    max-width: 250px;
+}
+
+/* Prompt Buttons */
+.prompt-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.prompt-btn {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+}
+
+/* Drill Animation */
+.breathing-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    animation: breathe 4s infinite ease-in-out;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.breathing-instruction {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Mobile Optimizations for Toolkit */
+@media (max-width: 768px) {
+    .category-filter .btn {
+        font-size: 0.8rem;
+        padding: 6px 4px;
+    }
+    
+    .search-box {
+        max-width: 150px;
+    }
+    
+    .d-flex.justify-content-between.align-items-center.mb-4 {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .d-flex.justify-content-between.align-items-center.mb-4 h1 {
+        margin-bottom: 0;
+    }
+}
+/* Garage Specific Styles */
+.professional-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.professional-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.professional-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+}
+
+.specialty-tags .badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.session-card {
+    border-left: 4px solid var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.session-card.past {
+    border-left-color: #6c757d;
+    opacity: 0.8;
+}
+
+.session-card .session-actions {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.session-card:hover .session-actions {
+    opacity: 1;
+}
+
+/* Availability Indicator */
+.availability-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.availability-dot.available {
+    background-color: #28a745;
+}
+
+.availability-dot.limited {
+    background-color: #ffc107;
+}
+
+.availability-dot.unavailable {
+    background-color: #dc3545;
+}
+
+/* Rating Stars */
+.rating {
+    color: #ffc107;
+}
+
+/* Crisis Resources */
+.card-border-danger {
+    border: 2px solid #dc3545;
+}
+
+/* Filter Section */
+.filter-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Modal Styles */
+.modal-professional-info {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Mobile Optimizations for Garage */
+@media (max-width: 768px) {
+    .professional-card .d-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .professional-image {
+        margin: 0 auto 1rem auto;
+    }
+    
+    .professional-actions {
+        margin-top: 1rem;
+    }
+    
+    .filter-section .row > div {
+        margin-bottom: 0.5rem;
+    }
+    
+    .d-flex.justify-content-between.align-items-center.mb-4 {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .search-box {
+        width: 100%;
+        max-width: none;
+    }
+}
+/* Crew Specific Styles */
+.tab-content {
+    min-height: 400px;
+}
+
+.group-card, .squad-card, .event-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.group-card:hover, .squad-card:hover, .event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.member-count {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.activity-level {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.activity-high {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.activity-medium {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.activity-low {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Squad Members */
+.squad-members {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.member-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    margin-right: -8px;
+    border: 2px solid white;
+}
+
+.member-avatar.more {
+    background: #6c757d;
+    font-size: 0.7rem;
+}
+
+/* Event Cards */
+.event-date {
+    background: linear-gradient(135deg, var(--secondary-color), #764ba2);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    min-width: 70px;
+}
+
+.event-date .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.event-type-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Chat Styles */
+.chat-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.chat-message.own {
+    background-color: var(--secondary-color);
+    color: white;
+    margin-left: auto;
+}
+
+.chat-message.other {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+.message-sender {
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Group Tags */
+.group-tags .badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* Progress in Squads */
+.squad-progress {
+    height: 6px;
+    margin: 10px 0;
+}
+
+/* Online Indicator */
+.online-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #28a745;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Mobile Optimizations for Crew */
+@media (max-width: 768px) {
+    .quick-stats .col-6 {
+        margin-bottom: 1rem;
+    }
+    
+    .nav-tabs .nav-link {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+    
+    .event-card .d-flex {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        margin-bottom: 1rem;
+        min-width: 60px;
+    }
+    
+    .squad-members {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .modal-dialog {
+        margin: 10px;
+    }
+}
+
+/* Animation for new messages */
+@keyframes newMessage {
+    from { background-color: rgba(52, 152, 219, 0.1); }
+    to { background-color: transparent; }
+}
+
+.chat-message.new {
+    animation: newMessage 2s ease;
+}
+/* Progress Charts Styles */
+.progress-stat {
+    position: relative;
+    overflow: hidden;
+}
+
+.streak-fire {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.stat-card {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--light-bg);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+.activity-calendar {
+    margin-top: 10px;
+}
+
+.day-activity {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.activity-none { background-color: var(--light-bg); color: var(--text-color); }
+.activity-low { background-color: #c6f6d5; color: #22543d; }
+.activity-medium { background-color: #68d391; color: #22543d; }
+.activity-high { background-color: #38a169; color: white; }
+
+/* Chart container responsiveness */
+.chart-container {
+    position: relative;
+    height: 250px;
+    width: 100%;
+}
+
+/* Custom tooltip styles */
+.chart-tooltip {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+}
+
+/* Progress bars in stats */
+.progress {
+    background-color: var(--light-bg);
+    height: 6px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+/* Achievement badges */
+.achievement-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Mobile optimizations for charts */
+@media (max-width: 768px) {
+    .chart-container {
+        height: 200px;
+    }
+    
+    .day-activity {
+        width: 25px;
+        height: 25px;
+        font-size: 0.6rem;
+    }
+    
+    .btn-group.btn-group-sm .btn {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+}
+/* Reminder System Styles */
+.reminder-notifications-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1060;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.reminder-notification {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-left: 4px solid var(--secondary-color);
+    margin-bottom: 10px;
+    animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Reminder Management Styles */
+.reminder-card {
+    border-left: 4px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.reminder-card.disabled {
+    border-left-color: #6c757d;
+    opacity: 0.7;
+}
+
+.reminder-time {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.reminder-days {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.day-pill {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.day-pill.active {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.day-pill.inactive {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.reminder-type-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.reminder-actions {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.reminder-card:hover .reminder-actions {
+    opacity: 1;
+}
+
+/* Toggle switch for reminders */
+.reminder-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.reminder-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.reminder-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.reminder-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .reminder-slider {
+    background-color: var(--secondary-color);
+}
+
+input:checked + .reminder-slider:before {
+    transform: translateX(26px);
+}
+
+/* Reminder form styles */
+.reminder-form .time-input {
+    max-width: 120px;
+}
+
+/* Quick actions for reminders */
+.quick-reminder-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Mobile optimizations for reminders */
+@media (max-width: 768px) {
+    .reminder-notifications-container {
+        top: 60px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .reminder-card .d-flex {
+        flex-direction: column;
+    }
+    
+    .reminder-actions {
+        opacity: 1;
+        margin-top: 10px;
+    }
+    
+    .quick-reminder-actions {
+        flex-direction: column;
+    }
+    
+    .quick-reminder-actions .btn {
+        text-align: center;
+    }
+}
+/* Reminder Alert Styles */
+.reminder-alert {
+    border-left: 4px solid var(--secondary-color);
+    animation: slideInRight 0.3s ease;
+}
+
+.reminder-alert.alert-info {
+    border-left-color: var(--secondary-color);
+}
+
+.reminder-alert.alert-success {
+    border-left-color: var(--success-color);
+}
+
+.reminder-actions {
+    margin-top: 10px;
+}
+
+.reminder-actions .btn {
+    margin-right: 8px;
+    margin-bottom: 5px;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Notification permission prompt */
+.notification-permission {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Test reminder section */
+.test-reminder {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+}
+/* Achievement Styles */
+.achievement-notification {
+    border-left: 4px solid;
+    animation: slideInRight 0.3s ease;
+}
+
+.achievement-card {
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.achievement-icon {
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .achievement-icon {
+    transform: scale(1.1);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
