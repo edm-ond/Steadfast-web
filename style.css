@@ -1002,339 +1002,8 @@ input:checked + .reminder-slider:before {
     }
 }
 /* Games Section Styles */
-.section-subtitle {
-    text-align: center;
-    color: var(--gray);
-    margin-bottom: 40px;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.game-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.game-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-.game-image {
-    height: 180px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.game-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.game-icon {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.game-content {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.game-title {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: var(--primary);
-}
-
-.game-meta {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    color: var(--gray);
-    font-size: 0.9rem;
-}
-
-.game-description {
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    flex-grow: 1;
-}
-
-.game-features {
-    margin-bottom: 20px;
-}
-
-.game-features ul {
-    list-style: none;
-    padding: 0;
-}
-
-.game-features li {
-    padding: 5px 0;
-    position: relative;
-    padding-left: 20px;
-    font-size: 0.9rem;
-}
-
-.game-features li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: bold;
-}
-
-.game-button {
-    display: inline-block;
-    background-color: var(--accent);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.game-button:hover {
-    background-color: var(--primary);
-}
-
-.game-button.secondary {
-    background-color: transparent;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    margin-top: 10px;
-}
-
-.game-button.secondary:hover {
-    background-color: var(--accent);
-    color: white;
-}
-
-/* Game Modal */
-#gameModal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.game-modal-content {
-    background-color: white;
-    margin: 5% auto;
-    padding: 30px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-    text-align: center;
-}
-
-.game-modal-title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-.game-modal-description {
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-.game-instructions {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    text-align: left;
-}
-
-.game-instructions h4 {
-    margin-bottom: 10px;
-    color: var(--primary);
-}
-
-.game-instructions ol {
-    padding-left: 20px;
-}
-
-.game-instructions li {
-    margin-bottom: 8px;
-}
-
-.game-actions {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* Game Specific Styles */
-.mood-tracker-game {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.breathing-exercise {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-}
-
-.gratitude-journal {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-.stress-buster {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.mindfulness-challenge {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-
-.positive-habits {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    color: #333;
-}
-
-/* Responsive adjustments for games */
-@media (max-width: 768px) {
-    .games-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .game-modal-content {
-        width: 95%;
-        margin: 10% auto;
-        padding: 20px;
-    }
-    
-    .game-actions {
-        flex-direction: column;
-    }
-}
-:root {
-    --primary: #3182ce;
-    --secondary: #2d3748;
-    --accent: #3182ce;
-    --light: #f7fafc;
-    --dark: #2d3748;
-    --gray: #a0aec0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #f5f7fa;
-    color: var(--dark);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.logo span {
-    color: var(--accent);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--accent);
-}
-
-.hero {
-    text-align: center;
-    padding: 60px 0;
-    background-color: white;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 25px;
-    color: var(--secondary);
-}
-
+        
 .content-section {
     padding: 40px 0;
 }
@@ -1816,46 +1485,273 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
 }
+/* Game Container Styles */
+#gameContainer {
+    min-height: 400px;
+    padding: 20px;
+}
 
-/* Game Specific Styles */
-.mood-tracker-game {
+/* Breathing Exercise Styles */
+.breathing-game {
+    text-align: center;
+}
+
+.breathing-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 2s ease-in-out;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.breathing-exercise {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+.breathing-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.gratitude-journal {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+.breathing-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    font-weight: bold;
 }
 
-.stress-buster {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+.breathing-controls {
+    margin-top: 20px;
 }
 
-.mindfulness-challenge {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+/* Mood Tracker Styles */
+.mood-tracker-game {
+    text-align: center;
 }
 
-.positive-habits {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    color: #333;
+.mood-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
 }
 
-/* Responsive adjustments for games */
+.mood-option {
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.mood-option:hover {
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.mood-option.selected {
+    border-color: var(--accent);
+    background-color: rgba(49, 130, 206, 0.1);
+    transform: scale(1.1);
+}
+
+.mood-emoji {
+    font-size: 2rem;
+    display: block;
+}
+
+.mood-name {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.mood-journal {
+    margin: 20px 0;
+}
+
+.mood-journal textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.mood-history-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.mood-note {
+    font-style: italic;
+    color: var(--gray);
+}
+
+/* Gratitude Journal Styles */
+.gratitude-journal-game {
+    text-align: center;
+}
+
+.gratitude-entries {
+    margin: 20px 0;
+}
+
+.gratitude-entries input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.gratitude-history-entry {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.gratitude-history-entry ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.gratitude-history-entry li {
+    margin: 5px 0;
+}
+
+/* Mindfulness Bell Styles */
+.mindfulness-bell-game {
+    text-align: center;
+}
+
+.bell-controls {
+    margin: 20px 0;
+}
+
+.bell-controls select {
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.bell-status {
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+#bellState {
+    font-weight: bold;
+}
+
+.mindfulness-prompts {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Positive Affirmations Styles */
+.affirmations-game {
+    text-align: center;
+}
+
+.affirmation-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#currentAffirmation {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.affirmation-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.custom-affirmations {
+    margin: 20px 0;
+}
+
+.custom-affirmations input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.affirmation-progress {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Stress Wave Styles */
+.stress-wave-game {
+    text-align: center;
+}
+
+.wave-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.wave-controls {
+    margin: 20px 0;
+}
+
+.wave-controls input {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.breathing-guide {
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .games-grid {
-        grid-template-columns: 1fr;
+    .mood-options {
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    .game-modal-content {
-        width: 95%;
-        margin: 10% auto;
-        padding: 20px;
-    }
-    
-    .game-actions {
+    .affirmation-controls {
         flex-direction: column;
     }
+    
+    .custom-affirmations input {
+        width: 100%;
+        margin-bottom: 10px;
     }
+    
+    #stressWave {
+        width: 100% !important;
+        height: 150px !important;
+    }
+}
