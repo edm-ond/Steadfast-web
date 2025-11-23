@@ -1,11 +1,6 @@
 Steadfast - Men's Mental Health Content Hub
 
 <div align="center">
-
-https://img.shields.io/badge/Steadfast-Men's%20Mental%20Health-blue?style=for-the-badge&logo=heart&logoColor=white
-https://img.shields.io/badge/version-1.0.0-green?style=for-the-badge
-https://img.shields.io/badge/license-MIT-blue?style=for-the-badge
-
 A comprehensive web application designed to support men's mental health through curated content and interactive tools.
 
 Features • Demo • Installation • Usage • Contributing
