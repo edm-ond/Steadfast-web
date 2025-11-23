@@ -1001,3 +1001,247 @@ input:checked + .reminder-slider:before {
         opacity: 1;
     }
 }
+/* Games Section Styles */
+.section-subtitle {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.game-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.game-image {
+    height: 180px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.game-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.game-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.game-description {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.game-features {
+    margin-bottom: 20px;
+}
+
+.game-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.game-features li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.9rem;
+}
+
+.game-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.game-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.game-button:hover {
+    background-color: var(--primary);
+}
+
+.game-button.secondary {
+    background-color: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    margin-top: 10px;
+}
+
+.game-button.secondary:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* Game Modal */
+#gameModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.game-modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+}
+
+.game-modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.game-modal-description {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.game-instructions {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.game-instructions h4 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.game-instructions ol {
+    padding-left: 20px;
+}
+
+.game-instructions li {
+    margin-bottom: 8px;
+}
+
+.game-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Game Specific Styles */
+.mood-tracker-game {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.breathing-exercise {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gratitude-journal {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stress-buster {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.mindfulness-challenge {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.positive-habits {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+}
+
+/* Responsive adjustments for games */
+@media (max-width: 768px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+    
+    .game-actions {
+        flex-direction: column;
+    }
+}
